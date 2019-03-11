@@ -1,0 +1,52 @@
+{
+  "name": "cra-starter",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@reach/router": "^1.2.1",
+    "@types/jest": "24.0.9",
+    "@types/node": "11.10.4",
+    "@types/reach__router": "^1.2.3",
+    "@types/react": "16.8.6",
+    "@types/react-dom": "16.8.2",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-scripts": "2.1.5",
+    "typescript": "^3.3.3333"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "precommit": "lint-staged",
+    "tslint": "node_modules/.bin/tslint -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.0",
+    "prettier": "^1.15.3",
+    "tslint": "^5.13.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-react": "^3.6.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "tslint",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run typecheck && yarn run precommit"
+    }
+  }
+}
