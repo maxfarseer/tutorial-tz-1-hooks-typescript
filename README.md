@@ -1,11 +1,9 @@
-Starter для проектов на react (в основе create-react-app).
+TZ #1 (react-hooks & TypeScript)
+===
 
-Данная ветка содержит [TypeScript](https://www.typescriptlang.org/index.html) версию.
+Стартовый репозиторий для прохождения туториала.
 
-## Добавлено:
-
-+ pre-commit hook (проверка tslint, форматирование prettier)
-+ [reach-router](https://reach.tech/router)
+Больше туториалов - [maxpfrontend.ru](https://maxpfrontend.ru/)
 
 ---
 
