@@ -1,38 +1,37 @@
 import * as React from 'react'
 
-import { Link, Router } from '@reach/router'
-
-import { Home } from './pages/Home'
-import { Login } from './pages/Login'
-import { News } from './pages/News'
-import { Profile } from './pages/Profile'
-
 import './App.css'
 
-const App = (props: any) => {
+interface IAppProps {
+  name: string;
+  site: string;
+}
+
+const App: React.FC<IAppProps> = props => {
   return (
     <div className="container">
       <h1>TZ #1 with hooks & TypeScript</h1>
       <nav>
-        <Link to="/">Home</Link> <Link to="news">News</Link>{' '}
-        <Link to="profile">Profile</Link>
+        <p>Навигация</p>
       </nav>
 
+      <p>Отрисовка роутов</p>
+      <p>Привет, {props.name}</p>
+      <p>Сайт: {props.site}</p>
       {props.children}
     </div>
   )
 }
 
+const Baby = () => {
+  return <p>дочерний компонент</p>
+}
+
 const RoutedApp = () => {
   return (
-    <Router>
-      <App path="/">
-        <Home path="/" />
-        <Login path="/login" />
-        <News path="/news" />
-        <Profile path="/" />
-      </App>
-    </Router>
+    <App name="Max Frontend" site="maxpfrontend.ru">
+      <Baby />
+    </App>
   )
 }
 
