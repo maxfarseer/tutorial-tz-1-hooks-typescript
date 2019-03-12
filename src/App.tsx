@@ -27,7 +27,7 @@ const RoutedApp = () => {
   return (
     <Router>
       <App path="/">
-        <Home path="/" />
+        <Home path="/:param" />
         <Login path="/login" />
         <News path="/news" />
         <Profile path="/" />

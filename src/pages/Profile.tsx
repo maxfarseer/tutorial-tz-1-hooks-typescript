@@ -1,6 +1,8 @@
 import * as React from 'react'
 
-const Profile = () => {
+import { RouteComponentProps } from '@reach/router'
+
+const Profile: React.FC<RouteComponentProps> = () => {
   return <p>Profile page</p>
 }
 

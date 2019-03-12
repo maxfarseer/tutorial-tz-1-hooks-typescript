@@ -1,6 +1,8 @@
 import * as React from 'react'
 
-const Login = () => {
+import { RouteComponentProps } from '@reach/router'
+
+const Login: React.FC<RouteComponentProps> = () => {
   const onSubmit = () => {
     // tslint:disable-next-line: no-console
     console.log('submit!')
