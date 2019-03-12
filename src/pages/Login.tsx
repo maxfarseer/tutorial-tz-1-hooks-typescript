@@ -50,7 +50,7 @@ const Login: React.FC<RouteComponentProps> = () => {
           onChange={onInputChange('username')}
         />
         <input
-          type="text"
+          type="password"
           value={user.password}
           onChange={onInputChange('password')}
         />

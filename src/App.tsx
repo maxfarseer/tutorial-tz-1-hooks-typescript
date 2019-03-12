@@ -2,10 +2,13 @@ import * as React from 'react'
 
 import { Link, RouteComponentProps, Router } from '@reach/router'
 
+import { Authenticated } from './components/сommon/Authenticated'
 import { Home } from './pages/Home'
 import { Login } from './pages/Login'
 import { News } from './pages/News'
 import { Profile } from './pages/Profile'
+
+import { checkAuthStatus, logout } from './api/auth'
 
 import './App.css'
 
@@ -15,7 +18,8 @@ const App: React.FC<RouteComponentProps> = props => {
       <h1>TZ #1 with hooks & TypeScript</h1>
       <nav>
         <Link to="/">Домой</Link> <Link to="news">Новости</Link>{' '}
-        <Link to="profile">Профиль</Link>
+        <Link to="profile">Профиль</Link>{' '}
+        {checkAuthStatus() ? <button onClick={logout}>Выйти</button> : null}
       </nav>
 
       {props.children}
@@ -30,7 +34,9 @@ const RoutedApp = () => {
         <Home path="/" />
         <Login path="/login" />
         <News path="/news" />
-        <Profile path="/profile" />
+        <Authenticated path="/profile">
+          <Profile path="/" />
+        </Authenticated>
       </App>
     </Router>
   )
