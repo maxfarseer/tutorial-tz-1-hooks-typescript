@@ -5,7 +5,7 @@ import { RouteComponentProps } from '@reach/router'
 const Home: React.FC<RouteComponentProps> = () => {
   return (
     <>
-      <p>Home page path</p>
+      <p>Домашняя страница</p>
     </>
   )
 }

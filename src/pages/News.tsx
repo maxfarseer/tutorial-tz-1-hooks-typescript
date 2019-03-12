@@ -5,7 +5,7 @@ import { RouteComponentProps } from '@reach/router'
 const News: React.FC<RouteComponentProps> = () => {
   return (
     <div className="news">
-      <p>News</p>
+      <p>Новости</p>
     </div>
   )
 }

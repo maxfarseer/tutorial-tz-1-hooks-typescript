@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Link, Router } from '@reach/router'
+import { Link, RouteComponentProps, Router } from '@reach/router'
 
 import { Home } from './pages/Home'
 import { Login } from './pages/Login'
@@ -9,13 +9,13 @@ import { Profile } from './pages/Profile'
 
 import './App.css'
 
-const App = (props: any) => {
+const App: React.FC<RouteComponentProps> = props => {
   return (
     <div className="container">
       <h1>TZ #1 with hooks & TypeScript</h1>
       <nav>
-        <Link to="/">Home</Link> <Link to="news">News</Link>{' '}
-        <Link to="profile">Profile</Link>
+        <Link to="/">Домой</Link> <Link to="news">Новости</Link>{' '}
+        <Link to="profile">Профиль</Link>
       </nav>
 
       {props.children}
@@ -27,10 +27,10 @@ const RoutedApp = () => {
   return (
     <Router>
       <App path="/">
-        <Home path="/:param" />
+        <Home path="/" />
         <Login path="/login" />
         <News path="/news" />
-        <Profile path="/" />
+        <Profile path="/profile" />
       </App>
     </Router>
   )

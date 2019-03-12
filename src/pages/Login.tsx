@@ -13,7 +13,7 @@ const Login: React.FC<RouteComponentProps> = () => {
       <form onSubmit={onSubmit}>
         <input type="text" />
         <input type="text" />
-        <button>Login</button>
+        <button>Отправить</button>
       </form>
     </>
   )
