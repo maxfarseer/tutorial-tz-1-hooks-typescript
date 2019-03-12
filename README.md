@@ -1,7 +1,7 @@
 TZ #1 (react-hooks & TypeScript)
 ===
 
-Стартовый репозиторий для прохождения туториала.
+Стартовый репозиторий для прохождения [туториала](https://habr.com/ru/post/443424/).
 
 Больше туториалов - [maxpfrontend.ru](https://maxpfrontend.ru/)
 
