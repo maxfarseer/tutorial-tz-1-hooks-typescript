@@ -1,7 +1,9 @@
 TZ #1 (react-hooks & TypeScript)
 ===
 
-Стартовый репозиторий для прохождения [туториала](https://habr.com/ru/post/443424/).
+Это продолжение [туториала по TypeScript & React-hooks](https://habr.com/ru/post/443424/)
+
+С данного шага добавляется [styled-components](https://www.styled-components.com/) 
 
 Больше туториалов - [maxpfrontend.ru](https://maxpfrontend.ru/)
 
