@@ -22,12 +22,13 @@ export const authenticate = (data: IUserIdentity): Promise<IAuthResponse> => {
         status: 500,
         errorText: 'incorrect_login_or_password',
       })
+    } else {
+      window.localStorage.setItem('tstz.authenticated', 'true')
+      resolve({
+        status: 200,
+        data: 'ok',
+      })
     }
-    window.localStorage.setItem('tstz.authenticated', 'true')
-    resolve({
-      status: 200,
-      data: 'ok',
-    })
   })
 
   return promise
