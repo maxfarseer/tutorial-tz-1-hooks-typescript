@@ -21,6 +21,7 @@ const App: React.FC<RouteComponentProps> = props => {
         <Link to="profile">Профиль</Link>{' '}
         {checkAuthStatus() ? <button onClick={logout}>Выйти</button> : null}
       </nav>
+      <br />
 
       {props.children}
     </div>

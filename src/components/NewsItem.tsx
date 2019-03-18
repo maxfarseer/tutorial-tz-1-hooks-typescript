@@ -1,4 +1,5 @@
 import * as React from 'react'
+import styled from 'styled-components'
 
 import { INewsItem } from '../models/news'
 
@@ -6,12 +7,17 @@ interface INewsItemProps {
   data: INewsItem;
 }
 
+const Article = styled.article`
+  margin: 10px;
+  border: 1px solid black;
+  padding: 5px;
+`
+
 const NewsItem: React.FC<INewsItemProps> = ({
   data: { title, text, timestamp, link },
 }) => {
   return (
-    <article>
-      <br />
+    <Article>
       <div>
         {
           <a href={link} target="_blank">
@@ -21,7 +27,7 @@ const NewsItem: React.FC<INewsItemProps> = ({
         | {timestamp.toLocaleDateString()}
       </div>
       <div>{text}</div>
-    </article>
+    </Article>
   )
 }
 
