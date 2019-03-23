@@ -16,15 +16,18 @@ const Login: React.FC<RouteComponentProps> = () => {
 
   const [notification, setNotification] = React.useState<string>('')
 
-  const onInputChange = (fieldName: string) => (
-    e: React.SyntheticEvent<HTMLInputElement>
-  ): void => {
-    setField({
-      ...user,
-      [fieldName]: e.currentTarget.value,
-    })
-    setNotification('')
-  }
+  const onInputChangeMemoized = React.useCallback(
+    (fieldName: string) => (
+      e: React.SyntheticEvent<HTMLInputElement>
+    ): void => {
+      setField({
+        ...user,
+        [fieldName]: e.currentTarget.value,
+      })
+      setNotification('')
+    },
+    [user]
+  )
 
   const onSubmit = (e: React.SyntheticEvent<HTMLFormElement>): void => {
     e.preventDefault()
@@ -50,12 +53,12 @@ const Login: React.FC<RouteComponentProps> = () => {
         <input
           type="text"
           value={user.username}
-          onChange={onInputChange('username')}
+          onChange={onInputChangeMemoized('username')}
         />
         <input
           type="password"
           value={user.password}
-          onChange={onInputChange('password')}
+          onChange={onInputChangeMemoized('password')}
         />
         <button>Login</button>
       </form>
