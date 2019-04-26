@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { INewsItem } from '../models/news'
+import { INewsItem } from '../types'
 
 interface INewsItemProps {
   data: INewsItem;

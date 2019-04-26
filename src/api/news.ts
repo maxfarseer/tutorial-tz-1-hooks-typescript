@@ -1,4 +1,4 @@
-import { INewsItem } from '../models/news'
+import { INewsItem } from '../pages/News/types'
 
 interface INewsResponse {
   status: number;
@@ -32,7 +32,7 @@ const fakeData = [
   },
 ]
 
-export const getNews = (): Promise<INewsResponse> => {
+export const loadNews = (): Promise<INewsResponse> => {
   const promise = new Promise<INewsResponse>(resolve => {
     resolve({
       status: 200,

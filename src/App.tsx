@@ -1,14 +1,16 @@
 import * as React from 'react'
 
 import { Link, RouteComponentProps, Router } from '@reach/router'
+import { Provider } from 'react-redux'
 
 import { Authenticated } from './components/сommon/Authenticated'
 import { Home } from './pages/Home'
 import { Login } from './pages/Login'
-import { News } from './pages/News'
+import { components as News } from './pages/News'
 import { Profile } from './pages/Profile'
 
 import { checkAuthStatus, logout } from './api/auth'
+import { store } from './store/configureStore'
 
 import './App.css'
 
@@ -29,16 +31,18 @@ const App: React.FC<RouteComponentProps> = props => {
 
 const RoutedApp = () => {
   return (
-    <Router>
-      <App path="/">
-        <Home path="/" />
-        <Login path="/login" />
-        <News path="/news" />
-        <Authenticated path="/profile">
-          <Profile path="/" />
-        </Authenticated>
-      </App>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <App path="/">
+          <Home path="/" />
+          <Login path="/login" />
+          <News.NewsContainer path="/news" />
+          <Authenticated path="/profile">
+            <Profile path="/" />
+          </Authenticated>
+        </App>
+      </Router>
+    </Provider>
   )
 }
 
